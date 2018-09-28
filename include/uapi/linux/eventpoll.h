@@ -14,8 +14,6 @@
 #ifndef _UAPI_LINUX_EVENTPOLL_H
 #define _UAPI_LINUX_EVENTPOLL_H
 
-#ifdef __KERNEL__
-
 /* For O_CLOEXEC */
 #include <linux/fcntl.h>
 #include <linux/types.h>
@@ -76,6 +74,7 @@ struct epoll_event {
 	__u32 events;
 	__u64 data;
 } EPOLL_PACKED;
+
 #ifdef CONFIG_PM_SLEEP
 static inline void ep_take_care_of_epollwakeup(struct epoll_event *epev)
 {
